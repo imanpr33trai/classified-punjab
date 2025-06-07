@@ -1,0 +1,1536 @@
+/* style.css - Consolidated and Enhanced for all pages */
+
+/* ==========================================================================
+   Font Definitions
+   ========================================================================== */
+@font-face {
+  font-family: poppins-extra-light;
+  src: url(../fonts/poppins/Poppins-ExtraLight.ttf);
+}
+@font-face {
+  font-family: poppins-light;
+  src: url(../fonts/poppins/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: poppins-regular;
+  src: url(../fonts/poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: poppins-medium;
+  src: url(../fonts/poppins/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: poppins-bold;
+  src: url(../fonts/poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: poppins-extra-bold;
+  src: url(../fonts/poppins/Poppins-ExtraBold.ttf);
+}
+@font-face {
+  font-family: poppins-black;
+  src: url(../fonts/poppins/Poppins-Black.ttf);
+}
+.poppins-extra-light {
+  font-family: poppins-extra-light;
+}
+.poppins-light {
+  font-family: poppins-light;
+}
+.poppins-regular {
+  font-family: poppins-regular;
+}
+.poppins-medium {
+  font-family: poppins-medium;
+}
+.poppins-bold {
+  font-family: poppins-bold;
+}
+.poppins-extra-bold {
+  font-family: poppins-extra-bold;
+}
+.poppins-black {
+  font-family: poppins-black;
+}
+
+@font-face {
+  font-family: playfair-regular;
+  src: url(../fonts/playfair/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: playfair-medium;
+  src: url(../fonts/playfair/PlayfairDisplay-Medium.ttf);
+}
+@font-face {
+  font-family: playfair-semi-bold;
+  src: url(../fonts/playfair/PlayfairDisplay-SemiBold.ttf);
+}
+@font-face {
+  font-family: playfair-bold;
+  src: url(../fonts/playfair/PlayfairDisplay-Bold.ttf);
+}
+@font-face {
+  font-family: playfair-extra-bold;
+  src: url(../fonts/playfair/PlayfairDisplay-ExtraBold.ttf);
+}
+@font-face {
+  font-family: playfair-black;
+  src: url(../fonts/playfair/PlayfairDisplay-Black.ttf);
+}
+.playfair-regular {
+  font-family: playfair-regular;
+}
+.playfair-medium {
+  font-family: playfair-medium;
+}
+.playfair-semi-bold {
+  font-family: playfair-semi-bold;
+}
+.playfair-bold {
+  font-family: playfair-bold;
+}
+.playfair-extra-bold {
+  font-family: playfair-extra-bold;
+} /* Corrected */
+.playfair-black {
+  font-family: playfair-black;
+}
+
+/* ==========================================================================
+   Global Settings & Variables
+   ========================================================================== */
+:root {
+  --theme-color-pink: #fb295b;
+  --theme-color-white: #ffffff;
+  --theme-color-text-p: #666666;
+  --theme-color-text-dark: #191919; /* Your header bg */
+  --theme-color-text-medium: #383838; /* Your head-search-area bg */
+  --theme-color-border: #c9c9c9;
+  --theme-color-border-light: #e5e5e5;
+  --theme-color-background-light: #f0f0f0; /* Your sec-categories bg */
+  --theme-color-background-lighter: #f5f5f5; /* Your posts-search-con bg */
+  --theme-color-danger: #dc3545;
+  --theme-color-success: #28a745;
+
+  /* ADDED: Font variables for easier management */
+  --font-primary: "poppins-regular", sans-serif;
+  --font-secondary: "playfair-regular", serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: #333;
+  background-color: var(--theme-color-white);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px; /* Consistent padding */
+  padding-right: 15px;
+}
+img {
+  max-width: 100%; /* Responsive images by default */
+  height: auto;
+  vertical-align: middle; /* Remove bottom space */
+}
+a {
+  color: var(--theme-color-text-dark); /* Your default link color */
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--theme-color-pink);
+}
+
+/* ==========================================================================
+   Utility Classes (Font sizes, colors, margins from your original)
+   ========================================================================== */
+.fos-90 {
+  font-size: 90px;
+}
+.fos-40 {
+  font-size: 40px;
+}
+.fos-32 {
+  font-size: 32px;
+}
+.fos-30 {
+  font-size: 30px;
+}
+.fos-24 {
+  font-size: 24px;
+}
+.fos-20 {
+  font-size: 20px;
+}
+.fos-18 {
+  font-size: 18px;
+}
+.fos-16 {
+  font-size: 16px;
+}
+.fos-14 {
+  font-size: 14px;
+}
+.fos-12 {
+  font-size: 12px;
+}
+
+.color-p {
+  color: var(--theme-color-text-p);
+}
+.color-pink {
+  color: var(--theme-color-pink) !important;
+} /* Added important for specificity */
+.text-white {
+  color: var(--theme-color-white) !important;
+}
+
+.mt-54 {
+  margin-top: 54px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-32 {
+  margin-top: 32px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-24 {
+  margin-bottom: 24px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mb-32 {
+  margin-bottom: 32px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.mb-60 {
+  margin-bottom: 60px;
+}
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+/* ADDED: Responsive padding classes */
+.py-3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-5 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1.5rem;
+} /* Bootstrap compatible */
+.mb-3 {
+  margin-bottom: 1rem;
+} /* Bootstrap compatible */
+.mb-4 {
+  margin-bottom: 1.5rem;
+} /* Bootstrap compatible */
+.mb-5 {
+  margin-bottom: 3rem;
+} /* Bootstrap compatible */
+.me-2 {
+  margin-right: 0.5rem;
+} /* Bootstrap compatible */
+
+/* ==========================================================================
+   Theme Buttons
+   ========================================================================== */
+.theme-btn {
+  background-color: var(--theme-color-pink);
+  color: var(--theme-color-white) !important;
+  border: 1px solid var(--theme-color-pink);
+  padding: 13px 33px;
+  transition: all ease 0.5s;
+  font-size: 16px;
+  font-family: poppins-medium;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+.theme-btn:hover {
+  background: transparent;
+  color: var(--theme-color-pink) !important;
+  border-color: var(--theme-color-pink);
+}
+.theme-input {
+  /* Your existing class for specific inputs */
+  max-height: 50px;
+  /* Add other specific styles if it's different from generic form-control */
+}
+
+/* ==========================================================================
+   Form Styling (Consolidated from ad-form adjustments)
+   ========================================================================== */
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-family: poppins-medium;
+  font-size: 16px;
+}
+.form-control,
+.form-select {
+  display: block;
+  width: 100%;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: var(--theme-color-white);
+  background-clip: padding-box;
+  border: 1px solid var(--theme-color-border);
+  appearance: none;
+  border-radius: 0 !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  height: 56px;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--theme-color-pink);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(251, 41, 91, 0.25);
+}
+.form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.form-section textarea.form-control, /* Selector from your original CSS for ad-form */
+textarea.form-control {
+  /* General textarea */
+  min-height: calc(1.5em + (10px * 2) + 2px);
+  border: 1px solid var(--theme-color-border-light);
+  border-radius: 0 !important;
+  height: auto; /* Allow textarea to grow */
+}
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 12px;
+  border: 1px solid var(--theme-color-border-light) !important;
+}
+input[type="checkbox"].form-check-input {
+  background-color: white;
+  border: 1px solid var(--theme-color-border);
+  height: 18px;
+  width: 18px;
+  min-width: 18px;
+  margin-top: 0.25em;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+input[type="checkbox"].form-check-input:checked {
+  background-color: var(--theme-color-pink) !important;
+  border-color: var(--theme-color-pink) !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+.form-check-label {
+  margin-left: 0.5em;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+.input-group > .form-control,
+.input-group > .form-select {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+}
+.input-group > .form-control:focus,
+.input-group > .form-select:focus {
+  z-index: 3;
+}
+.input-group .input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 10px 1rem;
+  font-size: 1rem;
+  color: #212529;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid var(--theme-color-border);
+  border-radius: 0;
+}
+.input-group > .form-control:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group > .form-control:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group > .input-group-text:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group > .input-group-text:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -1px;
+}
+.input-group > .btn {
+  position: relative;
+  z-index: 2;
+  border-radius: 0;
+  margin-left: -1px;
+}
+.input-group > .btn:focus {
+  z-index: 3;
+}
+
+.is-invalid {
+  border-color: var(--theme-color-danger) !important;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.is-invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--theme-color-danger);
+}
+.is-invalid ~ .invalid-feedback,
+.form-control.is-invalid + .invalid-feedback {
+  display: block;
+}
+.form-select.is-invalid {
+  padding-right: 4.125rem;
+  background-position: right 2.375rem center, center right 0.75rem;
+}
+
+/* Styles from your original .form-section for inputs, if they differ from .form-control */
+.form-section input {
+  /* This was in your original, height now covered by .form-control */
+  /* height: 56px; */
+  /* border-radius: 0 !important; */ /* Covered */
+  /* border: 1px solid #c9c9c9; */ /* Covered by --theme-color-border */
+}
+
+/* ==========================================================================
+   Header (Using your existing styles)
+   ========================================================================== */
+.navbar {
+  background-color: var(--theme-color-text-dark); /* #191919 */
+}
+.navbar-brand img {
+  max-width: 353px;
+}
+.head-search-area {
+  background-color: var(--theme-color-text-medium); /* #383838 */
+  padding: 12px 13px;
+}
+.head-drop {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 13.45px;
+  color: var(--theme-color-white);
+}
+.line-head {
+  color: #707070;
+  font-size: 20px;
+}
+.head-input input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--theme-color-white);
+  width: 150px;
+}
+.navbar-collapse a {
+  text-decoration: none;
+  color: var(--theme-color-white);
+}
+header select option {
+  background-color: #000000;
+  color: white;
+}
+/* Search results box from your original */
+.search-results-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #000000;
+  z-index: 1000;
+  max-height: 50vh;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px; /* max-width: 50vw; left: 25%; */ /* Max-width and left might need to be dynamic or use Bootstrap cols */
+}
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  cursor: pointer;
+}
+.search-result-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 5px;
+  background-color: var(--theme-color-white);
+}
+.search-result-item h6 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--theme-color-white);
+  flex: 1;
+}
+.search-result-item:hover {
+  background-color: #262626;
+}
+
+/* ==========================================================================
+   Hero Section (Using your existing styles, with minor responsive tweaks)
+   ========================================================================== */
+.hero-sec {
+  min-height: 548px;
+  background-image: url(../images/hero-image.svg);
+  background-size: cover; /* ADDED: Ensure image covers */
+  background-position: center center; /* ADDED: Center the image */
+  background-repeat: no-repeat;
+  display: flex; /* ADDED: For vertical centering if needed, was in your HTML */
+  justify-content: center;
+  align-items: center;
+}
+.hero-sec .container {
+  /* ADDED: Ensure container content is centered if text-align is not enough */
+  text-align: center;
+}
+.hero-sec h1 {
+  /* Reference to .fos-90 */
+  font-family: var(--font-secondary); /* playfair-medium */
+}
+.hero-sec h6 {
+  /* Reference to .fos-16 */
+  /* Your existing styles */
+}
+.head-searching-content {
+  gap: 20px; /* Your existing gap */
+  display: flex; /* ADDED: Ensure flex properties work */
+  justify-content: center;
+  align-items: center; /* Default to center alignment */
+}
+.head-searching-content input[type="text"] {
+  padding: 20px 12px;
+  outline: none;
+  border: none;
+  height: 50px; /* Overrides .form-control height here */
+  border-radius: 0; /* Consistent with other inputs */
+  background-color: var(
+    --theme-color-white
+  ); /* Ensure background for visibility */
+  color: var(--theme-color-text-dark);
+}
+/* Original width definitions - these will be overridden by flex behavior on smaller screens if not careful */
+.head-searching-content input:nth-child(1) {
+  min-width: 200px; /* width: 20%; From original, flex-grow is better for responsiveness */
+}
+.head-searching-content input:nth-child(2) {
+  min-width: 250px; /* width: 30%; From original */
+}
+.head-searching-content .theme-btn {
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+/* ==========================================================================
+   Section 1: Post Your Ads (Using your existing styles)
+   ========================================================================== */
+.section-1 {
+  padding: 80px 0px;
+}
+.section-1-text h2 {
+  font-family: var(--font-secondary);
+} /* playfair-medium */
+.section-1-advertisements .image-secs img {
+  min-height: 200px;
+  object-fit: cover; /* ADDED: Ensure image fills space */
+}
+
+/* ==========================================================================
+   Section 2: Categories (Using your existing styles)
+   ========================================================================== */
+.sec-categories {
+  background-color: var(--theme-color-background-light);
+  padding: 40px 0;
+}
+.all-cats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.single-cat {
+  padding: 30px 15px; /* Adjusted padding for better fit */
+  /* max-width: 11.11%; min-width: 11.11%; */ /* This makes it rigid, using flex-basis is better for responsiveness */
+  flex-basis: calc(100% / 9); /* Approx 9 items per row on large screens */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  transition: all ease 0.2s;
+  gap: 14px; /* From your original */
+  text-align: center; /* Center text and image */
+  display: flex; /* From your original */
+  flex-direction: column; /* From your original */
+  align-items: center; /* From your original */
+  text-decoration: none; /* From your original */
+}
+.single-cat:hover {
+  background-color: var(--theme-color-pink);
+}
+.single-cat:hover h3 {
+  color: var(--theme-color-white);
+}
+.single-cat h3 {
+  transition: all ease 0.7s;
+  margin-top: 10px;
+  font-family: poppins-medium;
+}
+.single-cat img {
+  max-width: 32px;
+  max-height: 32px;
+  transition: all ease 0.4s;
+}
+.single-cat:hover img {
+  filter: invert(1);
+}
+
+/* ==========================================================================
+   Section 3: All Classified Ads Search (Using your existing styles)
+   ========================================================================== */
+.sec-search {
+  padding: 70px 0 30px 0;
+}
+.posts-search-full-con {
+  /* This is the d-flex justify-content-between container */
+  align-items: center; /* Vertically align items */
+}
+.posts-search-full-con h3 {
+  font-family: var(--font-secondary);
+} /* playfair-medium */
+.posts-search-con {
+  background-color: var(--theme-color-background-lighter); /* #f5f5f5 */
+  border-radius: 48px;
+  padding: 10px 17px; /* Adjusted padding slightly */
+  height: 50px;
+  display: flex; /* Ensure display flex */
+  max-width: 380px;
+  align-items: center;
+}
+.posts-search-con select.posts-search {
+  /* More specific selector */
+  background: transparent;
+  border: none !important;
+  font-size: 14px;
+  outline: none;
+  color: var(--theme-color-text-dark); /* Ensure text is visible */
+  margin-right: 0.5rem; /* Add some spacing */
+  -webkit-appearance: none; /* Remove default arrow for custom styling if needed */
+  -moz-appearance: none;
+  appearance: none;
+  /* Add custom arrow if default is removed */
+}
+.search-posts-input-cont {
+  display: flex;
+  align-items: center;
+}
+.search-posts-input-cont input {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0 0.5rem;
+  flex-grow: 1;
+}
+.search-posts-input-cont img {
+  height: 16px; /* Adjust icon size */
+}
+
+/* ==========================================================================
+   Section 4: Ad Cards (Using your existing styles)
+   ========================================================================== */
+.section-4 {
+  padding-bottom: 50px;
+} /* Add some bottom padding */
+.card {
+  border: 1px solid var(--theme-color-border-light);
+  border-radius: 0; /* Consistent no-radius */
+  display: flex;
+  flex-direction: column;
+}
+.card .ad-tag {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  background-color: var(--theme-color-pink);
+  padding: 3px 12px;
+  color: white;
+  font-size: 14px;
+  z-index: 1;
+}
+.card .card-img-ad {
+  max-height: 238px;
+  width: 100%;
+  overflow: hidden; /* Prevent image overflow */
+}
+.card .card-img-ad img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Ensure image covers the area */
+  transition: transform 0.3s ease;
+}
+.card:hover .card-img-ad img {
+  transform: scale(1.05);
+} /* Slight zoom on hover */
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: flex-end; /* Pushes content to bottom if card has fixed height */
+  flex-grow: 1; /* Allow body to take remaining space */
+}
+.card .card-price-det {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align price and heart */
+}
+.card .wish-heart {
+  padding: 8px 12px;
+  background: #e6e6e6;
+  border-radius: 50px;
+  display: inline-flex;
+}
+.card .wish-heart img {
+  height: 16px;
+} /* Adjust icon size */
+.price-post {
+  color: var(--theme-color-pink);
+  font-size: 24px;
+  font-family: poppins-bold;
+}
+.Post-title {
+  font-size: 16px;
+  font-family: poppins-regular;
+  color: var(--theme-color-text-dark);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: calc(1.6em * 2); /* Approximate height for 2 lines */
+}
+.card hr {
+  border-top: 1px solid var(--theme-color-border-light);
+  margin: 0.75rem 0;
+}
+.card .d-flex.align-items-start img {
+  margin-right: 8px; /* Your .me-2 */
+  height: 16px; /* Adjust icon size */
+}
+.card .fos-14 {
+  font-size: 14px;
+  color: var(--theme-color-text-p);
+}
+.card .position-absolute.top-0.end-0 {
+  /* For the Bootstrap icon heart button */
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 0.3rem 0.5rem;
+}
+.card .position-absolute.top-0.end-0 i {
+  color: var(--theme-color-pink); /* Pink heart */
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   Login & Register Page (Your existing styles are generally fine)
+   ========================================================================== */
+.account-main {
+  padding: 100px 0;
+}
+.login-sec-2 {
+  padding: 50px 0;
+}
+.inner-section {
+  padding: 22px;
+  border: 1px solid rgba(102, 102, 102, 0.368627451);
+}
+/* .label is now .form-label */
+.hide a h6 {
+  color: var(--theme-color-text-p);
+}
+.hide img {
+  max-width: 18px;
+}
+.divider {
+  height: 1px;
+  background-color: var(--theme-color-border);
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   Single Category Page (Your existing styles)
+   ========================================================================== */
+.sidebar-category {
+  padding: 30px;
+  background-color: #e6e6e6;
+}
+.subcats-fetched {
+  position: relative;
+  overflow: hidden;
+}
+.subcats-fetched a {
+  display: block;
+  position: relative;
+  color: var(--theme-color-text-dark);
+  text-decoration: none;
+  transition: all ease 0.3s;
+  margin-bottom: 40px;
+}
+.subcats-fetched a::after {
+  content: "\2192";
+  position: absolute;
+  right: -100%;
+  bottom: -5px;
+  color: var(--theme-color-text-dark);
+  transition: all ease 0.5s;
+  font-size: 25px;
+}
+.subcats-fetched a::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #a3a3a3;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+.subcats-fetched a:hover {
+  font-family: poppins-medium;
+  color: var(--theme-color-pink);
+}
+.subcats-fetched a:hover::after {
+  color: var(--theme-color-pink);
+  right: 0%;
+}
+
+/* ==========================================================================
+   Breadcrumb (Your existing styles)
+   ========================================================================== */
+.breadcrump {
+  padding: 50px 0 30px 0;
+}
+.breadcrump-link-1 {
+  color: #a3a3a3;
+}
+.breadcrump-link-2 {
+  color: var(--theme-color-text-dark);
+}
+
+/* ==========================================================================
+   Ad Form Specific File Upload (Your existing refined styles)
+   ========================================================================== */
+.form-section .file-upload-main {
+  position: relative;
+} /* .form-section added for specificity */
+.form-section .file-uploads {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+.form-section .upload-image-placeholder-area {
+  border: 1px dotted var(--theme-color-border-light);
+  padding: 30px 20px; /* MODIFIED: Less extreme vertical padding */
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.form-section .upload-image-placeholder-area img {
+  max-height: 60px; /* MODIFIED */
+}
+
+/* ==========================================================================
+   Articles Page & Single Article (Your existing styles)
+   ========================================================================== */
+/* ... Your styles for articles, single article, single ad, pagination ... */
+.mb-50 {
+  margin-bottom: 50px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.all-blog-cats a.blog-category-filter {
+  color: var(--theme-color-text-dark);
+  text-decoration: none;
+  position: relative; /* For your existing ::after */
+  padding: 0.3rem 0.8rem; /* Add some padding to make them look like tags/buttons */
+  border: 1px solid var(--theme-color-border-light);
+  border-radius: 20px; /* Rounded tags */
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.all-blog-cats a.blog-category-filter:hover,
+.all-blog-cats a.blog-category-filter.active-category {
+  /* Style for active category */
+  color: var(--theme-color-white);
+  background-color: var(--theme-color-pink);
+  border-color: var(--theme-color-pink);
+}
+.all-blog-cats a.blog-category-filter:after {
+  /* Your existing rule for separator, might be less needed with new tag
+style */
+  /* content: ""; width: 2px; height: 100%; right: -20px; bottom: 0; position: absolute; background-color: #000000; */
+  display: none; /* Hiding the vertical separator lines as they are now styled as tags */
+}
+
+/* Article Cards (.article-card) */
+.articles-blogs .row {
+  align-items: stretch; /* Make columns in a row stretch to the same height */
+}
+.article-card {
+  border: 1px solid var(--theme-color-border-light);
+  min-height: 440px; /* Your existing style */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Your existing style */
+  background-color: var(--theme-color-white);
+  transition: box-shadow 0.3s ease;
+  border-radius: 4px; /* Optional: slight rounding to cards */
+  overflow: hidden; /* Ensure rounded corners clip image */
+}
+.article-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.card-img-blog {
+  width: 100%;
+  height: 200px; /* Fixed height for image container */
+  overflow: hidden;
+}
+.card-img-blog img.img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make image cover the container */
+  transition: transform 0.3s ease;
+}
+.article-card:hover .card-img-blog img.img-fluid {
+  transform: scale(1.05); /* Slight zoom on card hover */
+}
+
+.card-body-blog {
+  padding: 1rem; /* Bootstrap standard padding */
+  flex-grow: 1; /* Allow body to take available space */
+}
+.card-body-blog h3.fos-20 {
+  /* Targetting the title more specifically */
+  font-family: poppins-medium; /* Or playfair-medium if preferred for titles */
+  font-size: 1.15rem; /* Slightly adjust size */
+  line-height: 1.4;
+  margin-bottom: 0.75rem; /* Was mb-20 (too large) */
+  /* For text ellipsis on title if needed */
+  /* display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
+*/
+}
+.card-body-blog p {
+  font-size: 0.9rem;
+  color: var(--theme-color-text-p);
+  line-height: 1.6;
+  /* For text ellipsis on excerpt if needed */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Max 3 lines for excerpt */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: calc(1.6em * 3); /* Approx height for 3 lines */
+}
+
+.card-foot-blog {
+  padding: 0.75rem 1rem; /* Consistent padding */
+  border-top: 1px solid var(--theme-color-border-light);
+}
+.user-image-blog {
+  max-width: 35px; /* Slightly smaller user image */
+  max-height: 35px;
+  border-radius: 50%; /* Circular user image */
+}
+.usernameblog,
+.dateblog {
+  color: var(--theme-color-text-p); /* Was #6d7d8b */
+  font-size: 0.8rem; /* fos-12 */
+}
+.card-foot-blog .usernameblog.m-0:nth-of-type(2) {
+  /* The separator "|" */
+  display: none; /* Removing the hardcoded "|" separator, use margin/padding if needed */
+}
+
+/* Pagination (.pagination-sec) */
+.pagination-sec {
+  /* pb-100 is large, using pb-5 from HTML */
+}
+.pagination-sec .d-flex {
+  /* The main pagination flex container */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  justify-content: center; /* Center items when wrapped */
+}
+.pagination-btn {
+  border: 1px solid var(--theme-color-text-dark);
+  border-radius: 4px !important; /* Slight rounding */
+  padding: 0.5rem 1rem; /* Bootstrap-like padding */
+  color: var(--theme-color-text-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.pagination-btn:hover {
+  background-color: var(--theme-color-text-dark);
+  color: var(--theme-color-white);
+}
+.pagination-btn.disabled {
+  /* For disabled prev/next buttons */
+  pointer-events: none;
+  opacity: 0.5;
+}
+.pagination-pages {
+  /* Container for page numbers */
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0; /* Margin when stacked */
+}
+.pagination-nums {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--theme-color-text-dark);
+  border-radius: 4px !important; /* Slight rounding */
+  text-decoration: none;
+  color: var(--theme-color-text-dark);
+  margin: 0 0.25rem; /* Space between page numbers */
+  font-size: 0.9rem;
+  min-width: 38px; /* Ensure consistent width */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.pagination-nums.active, /* Active page number */
+.pagination-nums:hover {
+  background-color: var(--theme-color-pink); /* Pink for active/hover */
+  color: var(--theme-color-white);
+  border-color: var(--theme-color-pink);
+}
+.pagination-ellipsis {
+  padding: 0.5rem 0.25rem;
+  color: var(--theme-color-text-p);
+}
+
+.all-blog-cats {
+  display: flex;
+  column-gap: 60px;
+  flex-wrap: wrap;
+}
+.all-blog-cats a {
+  color: var(--theme-color-text-dark);
+  text-decoration: none;
+  position: relative;
+}
+.all-blog-cats a:after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  right: -20px;
+  bottom: 0;
+  position: absolute;
+  background-color: var(--theme-color-text-dark);
+}
+.all-blog-cats a:active,
+.all-blog-cats a:hover {
+  color: var(--theme-color-pink);
+}
+.all-blog-cats a:active::after,
+.all-blog-cats a:hover::after {
+  background-color: var(--theme-color-pink);
+}
+.article-card {
+  border: 1px solid var(--theme-color-border-light);
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-img-blog img {
+  width: 100%;
+  max-height: 147px;
+  object-fit: cover;
+}
+.card-body-blog {
+  padding: 20px 20px 0px 24px;
+}
+.card-foot-blog {
+  padding: 0 20px 24px 24px;
+}
+.user-image-blog {
+  max-width: 45px;
+  max-height: 45px;
+}
+.usernameblog,
+.dateblog {
+  color: #6d7d8b;
+}
+.articles-blogs {
+  padding-bottom: 50px;
+}
+
+.user-info {
+  background-color: var(--theme-color-text-dark);
+  padding: 20.86px 30px;
+}
+.next-post-sidebar {
+  background-color: var(--theme-color-pink);
+  color: var(--theme-color-white);
+  padding: 41px 41px 53px 41px;
+}
+.img-next-post {
+  max-width: 118px;
+  max-height: 118px;
+  width: 118px;
+  height: 118px;
+  object-fit: cover;
+}
+.share-with-community {
+  padding: 30px 30px 18px 30px;
+  background-color: var(--theme-color-pink);
+  color: var(--theme-color-white);
+}
+.inthisarticlelist li {
+  list-style: none;
+  position: relative;
+  margin-bottom: 40px;
+}
+.inthisarticlelist li.active::after {
+  content: "";
+  width: 5px;
+  height: 100%;
+  left: -20px;
+  top: 0;
+  position: absolute;
+  background-color: var(--theme-color-pink);
+  border-radius: 2px;
+}
+.inthisarticlelist li a {
+  color: var(--theme-color-text-dark);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.reviews-col {
+  border: 1px solid #e6e7ea;
+  padding: 16px;
+}
+.review-stars .star {
+  font-size: 32px;
+  color: var(--theme-color-text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.review-stars .star:hover,
+.review-stars .star.selected {
+  color: #ffd700;
+} /* Added .selected */
+
+.pagination-btn {
+  border: 1px solid var(--theme-color-text-dark);
+  border-radius: 0 !important;
+  padding: 11.5px 20px;
+  color: var(--theme-color-text-dark);
+  text-decoration: none;
+}
+.pagination-nums {
+  padding: 11.5px;
+  border: 1px solid var(--theme-color-text-dark);
+  border-radius: 0 !important;
+  text-decoration: none;
+  color: var(--theme-color-text-dark);
+  min-width: 40px;
+  text-align: center;
+} /* Added min-width and text-align */
+.pagination-nums.active, /* Added active state */
+.pagination-nums:active, .pagination-nums:hover {
+  background-color: var(--theme-color-text-dark);
+  color: var(--theme-color-white);
+}
+
+/* ==========================================================================
+   Footer (Your existing styles)
+   ========================================================================== */
+footer {
+  background-color: #252525;
+  padding: 48px 15px 30px 15px; /* MODIFIED: Use container padding */
+}
+footer .container {
+  padding-left: 0;
+  padding-right: 0;
+} /* Reset container padding if footer has its own */
+.newsletter {
+  background-color: transparent;
+  border: 1px solid var(--theme-color-white);
+  border-radius: 4px;
+  min-height: 48px;
+  width: 100%;
+  color: var(--theme-color-white);
+  padding: 0 15px;
+} /* Added color and padding */
+.newsletter::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.form-newsletter {
+  position: relative;
+}
+.form-newsletter img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  cursor: pointer;
+}
+.footer-links a {
+  color: var(--theme-color-white);
+  margin-right: 20px;
+  text-decoration: none;
+}
+.footer-links {
+  display: flex;
+  height: 100%;
+  align-items: end;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* ==========================================================================
+   Responsive Media Queries (Combining yours and adding for new elements)
+   ========================================================================== */
+
+/* Large devices (desktops, less than 1440px but more than 992px) */
+@media (max-width: 1440px) {
+  /* Your .container max-width is 1440px, so this range might not need much specific for .container itself */
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 992px) {
+  .container {
+    padding: 0px 30px;
+  }
+  .navbar-brand img {
+    max-width: 250px;
+  }
+  .fos-90 {
+    font-size: 70px;
+  }
+  .fos-40 {
+    font-size: 30px;
+  }
+  .section-1 {
+    padding: 60px 0px;
+  }
+  .single-cat {
+    flex-basis: calc(100% / 6);
+    padding: 20px 10px;
+  } /* 6 items */
+  .head-searching-content {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .head-searching-content input[type="text"] {
+    width: 100%;
+  }
+  .posts-search-full-con {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  .posts-search-con {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .search-posts-input-cont input {
+    width: auto;
+  } /* Let it grow */
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0px 15px;
+  }
+  .py-4.mb-4 .row.align-items-center > div {
+    /* Target the cols for title and button */
+    text-align: center !important; /* Center title and button when stacked */
+  }
+  .py-4.mb-4 .theme-btn {
+    width: auto; /* Allow button to not be full width if centered */
+    display: inline-block; /* Make it inline-block for centering */
+    margin-top: 0.5rem; /* Add some space above button when stacked */
+  }
+  .pb-100 {
+    padding-bottom: 30px;
+  }
+  .fos-90 {
+    font-size: 40px;
+  }
+  .fos-40 {
+    font-size: 24px;
+  }
+  .fos-32 {
+    font-size: 25px;
+  }
+  .fos-16 {
+    font-size: 14px;
+  }
+  .navbar-brand img {
+    max-width: 150px; /* Further reduce for small fixed headers */
+  }
+  .navbar {
+    padding: 10px 0; /* Your original */
+  }
+  .head-search-area {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .head-input {
+    width: 100%;
+    display: flex;
+  }
+  .head-input input {
+    flex-grow: 1;
+  }
+  .theme-input {
+    width: calc(100% - 60px);
+  }
+  .head-drop {
+    padding-right: 10px;
+  }
+  .navbar-toggler {
+    display: block; /* Show Bootstrap toggler if used */
+  }
+  .navbar-collapse {
+    /* Styles for collapsed menu */
+  }
+  .theme-btn {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+  .hero-sec {
+    min-height: auto;
+    padding: 60px 0;
+  }
+  .hide-text {
+    display: none;
+  }
+  .section-1 {
+    padding: 50px 0px;
+  }
+  .single-cat {
+    flex-basis: calc(100% / 3);
+    padding: 15px;
+  } /* 3 items */
+  .account-main {
+    padding: 30px 0;
+  }
+  .login-sec-2 {
+    padding: 25px 0;
+  }
+  footer {
+    padding: 30px 15px;
+  }
+  .form-label {
+    font-size: 15px;
+  }
+  .form-control,
+  .form-select {
+    padding: 8px 15px;
+    height: auto;
+    font-size: 0.9rem;
+  }
+  .input-group .input-group-text {
+    padding: 8px 0.75rem;
+  }
+  .upload-image-placeholder-area {
+    padding: 20px 15px;
+    min-height: 120px;
+    gap: 10px;
+  }
+  .search-results-box {
+    position: static;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  /* Your original adjustments for specific elements at this breakpoint */
+  .sec-search .fos-40 {
+    font-size: 26px;
+    text-align: center;
+  }
+  .posts-search-con {
+    border-radius: 30px;
+  }
+  .posts-search-con select.posts-search,
+  .search-posts-input-cont input {
+    font-size: 13px;
+  }
+  .search-posts-input-cont input .section-1-advertisements {
+    align-items: center;
+  }
+  .search-posts-input-cont input {
+    width: 100%;
+    text-align: center;
+  }
+  .section-1-advertisements .image-2.d-md-block {
+    display: block !important; /* Show second ad image */
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+  .fos-90 {
+    font-size: 32px;
+  }
+  .fos-40 {
+    font-size: 22px;
+  }
+  .fos-32 {
+    font-size: 22px;
+  }
+  .single-cat {
+    flex-basis: calc(100% / 2);
+  } /* 2 items */
+  .head-searching-content input[type="text"] {
+    padding: 15px 10px;
+  }
+  .theme-btn {
+    width: 100%; /* Make most theme buttons full-width */
+  }
+  .head-searching-content .theme-btn {
+    width: auto; /* Except hero search button */
+  }
+  .form-section .text-center .theme-btn, /* Ad form submit button */
+  .login-sec-2 .theme-btn {
+    /* Login/signup buttons */
+    width: 100%; /* Make form submission buttons full width */
+  }
+  .search-posts-input-cont {
+    flex-direction: column;
+    gap: 5px;
+    align-items: stretch;
+  }
+  .search-posts-input-cont input {
+    width: 100%;
+    text-align: center;
+  }
+  .posts-search-con span.line-head {
+    display: none;
+  } /* Hide separator */
+  .posts-search-con select.posts-search {
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-links a {
+    margin-right: 0;
+  }
+  .form-newsletter {
+    text-align: center;
+  } /* Original */
+  .form-newsletter img {
+    display: none; /* Hide arrow if input is full width */
+  }
+  .newsletter {
+    width: calc(100% - 30px);
+    margin: 0 auto 15px auto;
+  }
+}
+
+/* Your existing specific media queries */
+@media screen and (max-width: 1065px) {
+  /* This was for .single-cat before 991px rule */
+  /* .single-cat { max-width: 25%; min-width: 25%; } */ /* Now handled by flex-basis */
+}
+
+@media screen and (max-width: 412px) {
+  /* .fos-32 { font-size: 20px; } */ /* Covered by general fos-X reductions */
+  .ads-list {
+    padding-left: 0;
+    padding-right: 0;
+  } /* Remove side padding for cards on very small */
+  .footer-newletter-con {
+    padding: 0 15px;
+  } /* Your original */
+}
