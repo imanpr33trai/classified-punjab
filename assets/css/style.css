@@ -465,7 +465,10 @@ input[type="checkbox"].form-check-input:checked {
   background-color: var(--theme-color-text-dark); /* #191919 */
 }
 .navbar-brand img {
-  max-width: 353px;
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 .head-search-area {
   background-color: var(--theme-color-text-medium); /* #383838 */
@@ -487,7 +490,7 @@ input[type="checkbox"].form-check-input:checked {
   border: none;
   outline: none;
   color: var(--theme-color-white);
-  width: 150px;
+  width: 100%;
 }
 .navbar-collapse a {
   text-decoration: none;
@@ -1277,9 +1280,9 @@ footer .container {
   .container {
     padding: 0px 30px;
   }
-  .navbar-brand img {
+  /* .navbar-brand img {
     max-width: 250px;
-  }
+  } */
   .fos-90 {
     font-size: 70px;
   }
@@ -1358,7 +1361,7 @@ footer .container {
     height: auto;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
   }
   .head-input {
@@ -1482,7 +1485,6 @@ footer .container {
     width: 100%; /* Make form submission buttons full width */
   }
   .search-posts-input-cont {
-    flex-direction: column;
     gap: 5px;
     align-items: stretch;
   }

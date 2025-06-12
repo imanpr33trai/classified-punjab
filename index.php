@@ -104,8 +104,9 @@ include_once('partials/header.php');
     <div class="container">
         <div class="row">
             <div
-                class="d-flex justify-content-between posts-search-full-con gap-2 flex-sm-wrap flex-xxl-nowrap align-items-md-center">
-                <h3 class="playfair-medium fos-40 text-md-center text-sm-center text-center w-100">All Classified Ads
+                class="d-flex justify-content-between posts-search-full-con gap-2 flex-sm-wrap flex-xxl-nowrap align-items-md-center align-items-sm-center">
+                <h3 class="playfair-medium fos-40  w-100">All
+                    Classified Ads
                 </h3>
                 <div class="d-flex posts-search-con lower-post-search ">
                     <select name="catsPosts" id="catsPosts" class="posts-search ">
@@ -122,9 +123,9 @@ include_once('partials/header.php');
 
 
                     <span class="line-head mx-2">|</span>
-                    <div class="search-posts-input-cont d-flex">
+                    <div class="search-posts-input-cont w-100 d-flex">
                         <img src="<?php echo $base_url; ?>assets/images/black-search.svg" alt="">
-                        <input type="text" name="postsInput" id="" placeholder="Search">
+                        <input type="text" name="postsInput" id="" placeholder="Search" class="w-100">
                         <img src="<?php echo $base_url; ?>assets/images/black-microphone.svg" alt="">
                     </div>
                 </div>

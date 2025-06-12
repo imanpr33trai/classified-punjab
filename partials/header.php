@@ -49,7 +49,7 @@ session_start(); // Ensure session is started
                         </select>
 
                         <span class="line-head mx-2">|</span>
-                        <div class="head-input">
+                        <div class="head-input d-flex">
                             <img src="<?php echo $base_url; ?>assets/images/search-icon.svg" alt="">
                             <input type="text" placeholder="Search">
                             <img src="<?php echo $base_url; ?>assets/images/microphone.svg" alt="">
@@ -75,9 +75,11 @@ session_start(); // Ensure session is started
                     <a href="<?= POST_AD_URL ?>" class="theme-btn text-decoration-none">+ Post Ad</a>
                 </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span><img src="<?php echo $base_url; ?>assets/images/humbergar.svg" alt=""></span>
+                <button class="navbar-toggler d-lg-none d-xl-none d-xxl-none d-md-none" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><img src="<?php echo $base_url; ?>assets/images/humbergar.svg"
+                            alt=""></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarText">

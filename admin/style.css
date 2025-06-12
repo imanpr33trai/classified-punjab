@@ -1,52 +1,212 @@
+/* assets/css/admin_styles.css */
+
+/* ==========================================================================
+   Global Admin Styles
+   ========================================================================== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa; /* Light grey background for content area */
   margin: 0;
-  background: #f0f0f0;
+  overflow-x: hidden; /* Prevent horizontal scroll from sidebar transitions */
 }
-.dashboard {
-  display: flex;
+
+.admin-wrapper {
+  min-height: 100vh;
 }
+
+/* ==========================================================================
+   Sidebar Styles
+   ========================================================================== */
 .sidebar {
-  width: 250px;
-  background: #222;
+  width: 260px;
+  min-height: 100vh;
+  position: fixed; /* Fixed sidebar */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Above content */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+.sidebar-header h3 {
+  font-weight: 600;
+}
+
+.sidebar .nav-link {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 0.25rem; /* Slight rounding for nav items */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-  height: 100vh;
-  padding: 20px;
 }
-.sidebar h3 {
-  margin-bottom: 20px;
-}
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-.sidebar ul li {
-  margin: 15px 0;
-}
-.sidebar ul li a {
+.sidebar .nav-link.active {
+  background-color: #fb295b; /* Your theme pink for active link */
   color: #fff;
-  text-decoration: none;
+  font-weight: 500;
 }
+.sidebar .nav-link.active i {
+  color: #fff; /* Ensure icon color matches */
+}
+.sidebar .nav-link i {
+  width: 20px; /* Align icons */
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+.sidebar .nav-link.active i {
+  color: inherit;
+}
+
+.sidebar hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar .dropdown-toggle::after {
+  margin-left: auto; /* Push dropdown arrow to the right */
+}
+.sidebar .dropdown-menu {
+  min-width: calc(100% - 2rem); /* Match sidebar padding */
+}
+
+/* Sidebar Collapsed State (for mobile) */
+.sidebar.collapsed {
+  margin-left: -260px; /* Hide sidebar by moving it left */
+}
+
+/* ==========================================================================
+   Main Content Area Styles
+   ========================================================================== */
+.main-content {
+  transition: margin-left 0.3s ease-in-out;
+  margin-left: 260px; /* Default margin to account for sidebar width */
+  width: calc(100% - 260px); /* Take remaining width */
+}
+/* When sidebar is collapsed, main content takes full width */
+.sidebar.collapsed + .main-content {
+  margin-left: 0;
+  width: 100%;
+}
+
 #content-area {
-  flex: 1;
-  padding: 30px;
-  background: #fff;
+  background-color: #fff;
+  border-radius: 8px;
+  /* box-shadow: 0 0 15px rgba(0,0,0,0.07); */ /* Optional subtle shadow for content area */
+  min-height: calc(
+    100vh - 56px - 2rem
+  ); /* Adjust if top mobile navbar height changes or if you have a footer */
 }
-.login-container {
-  width: 300px;
-  margin: 100px auto;
-  padding: 30px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #aaa;
+.initial-load-content {
+  text-align: center;
+  padding: 50px;
+  color: #6c757d;
 }
-.login-container form {
-  display: flex;
-  flex-direction: column;
+
+/* Top Navbar for Mobile */
+.main-content .navbar.sticky-top {
+  z-index: 999; /* Below sidebar but above content */
 }
-.login-container input,
-.login-container button {
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 16px;
+#pageTitleMobile {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Content Specific Styles (Forms, Tables etc. - to be added in pages/*.php or here)
+   ========================================================================== */
+/* Example for forms loaded into #content-area */
+#content-area form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+#content-area form label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+#content-area .form-control,
+#content-area .form-select {
+  border-radius: 0.25rem; /* Softer radius for admin forms */
+  border: 1px solid #ced4da;
+}
+#content-area .form-control:focus,
+#content-area .form-select:focus {
+  border-color: #fb295b;
+  box-shadow: 0 0 0 0.2rem rgba(251, 41, 91, 0.25);
+}
+#content-area .btn-primary {
+  /* Using Bootstrap's primary, but styled with your theme */
+  background-color: #fb295b;
+  border-color: #fb295b;
+}
+#content-area .btn-primary:hover {
+  background-color: #d9244f;
+  border-color: #d9244f;
+}
+
+/* Tables */
+#content-area .table {
+  background-color: #fff; /* Ensure table bg is white if content area is different */
+}
+#content-area .table thead th {
+  background-color: #e9ecef; /* Light grey for table headers */
+  border-bottom-width: 2px;
+  font-weight: 500;
+}
+
+/* Alert messages */
+#content-area .alert {
+  border-radius: 0.25rem;
+}
+
+/* ==========================================================================
+   Responsive Adjustments for Admin Layout
+   ========================================================================== */
+
+/* For screens smaller than lg (Bootstrap's default for navbar-expand-lg) */
+@media (max-width: 991.98px) {
+  .sidebar {
+    margin-left: -260px; /* Sidebar hidden by default on smaller screens */
+  }
+  .sidebar.active {
+    /* Class 'active' will be toggled by JS to show sidebar */
+    margin-left: 0;
+  }
+  .main-content {
+    margin-left: 0; /* Main content takes full width by default */
+    width: 100%;
+  }
+  /* Overlay for when sidebar is open on mobile */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Below sidebar, above content */
+    display: none; /* Hidden by default */
+  }
+  .sidebar.active ~ .sidebar-overlay {
+    /* Show overlay when sidebar is active */
+    display: block;
+  }
+}
+
+/* Further adjustments for very small screens if needed */
+@media (max-width: 575.98px) {
+  #content-area {
+    padding: 1rem; /* Reduce padding on very small screens */
+  }
+  #content-area form {
+    padding: 1.5rem;
+  }
+  .main-content .navbar #pageTitleMobile {
+    font-size: 1rem;
+  }
 }
